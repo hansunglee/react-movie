@@ -46,15 +46,23 @@ function App() {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        movies.map((movie) => (
-          <Movie
-            key={movie.id}
-            title={movie.title}
-            coverImg={movie.medium_cover_image}
-            summary={movie.summary}
-            genres={movie.genres}
-          />
-        ))
+        // -------------------------------------------------
+        // 1) Each Parameter
+        // -------------------------------------------------
+        // movies.map((movie) => (
+        //   <Movie
+        //     key={movie.id}
+        //     title={movie.title}
+        //     coverImg={movie.medium_cover_image}
+        //     summary={movie.summary}
+        //     genres={movie.genres}
+        //   />
+        // ))
+
+        // -------------------------------------------------
+        // 2) Whole Object
+        // -------------------------------------------------
+        movies.map((movie) => <Movie key={movie.id} movie={movie} />)
       )}
     </div>
   );
