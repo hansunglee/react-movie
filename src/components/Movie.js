@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // -------------------------------------------------
 // 1) Each Parameter
 // -------------------------------------------------
@@ -22,7 +24,9 @@
 function Movie(props) {
   return (
     <div>
-      <h2>{props.movie.title}</h2>
+      <h2>
+        <Link to="/Movie">{props.movie.title}</Link>
+      </h2>
       <img alt={props.movie.title} src={props.movie.medium_cover_image}></img>
       <p>{props.movie.summary}</p>
       <ul>
