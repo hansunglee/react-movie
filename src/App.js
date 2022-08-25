@@ -12,11 +12,11 @@ function App() {
         <Route path="/hello">
           <h1>Hello2</h1>
         </Route>
+        <Route path="/movie">
+          <Detail />
+        </Route>
         <Route path="/">
           <Home />
-        </Route>
-        <Route path="/movie2">
-          <h1>Hello2</h1>
         </Route>
       </Switch>
     </Router>
