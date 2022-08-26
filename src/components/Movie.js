@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styles from "./Movie.module.css";
 
 // -------------------------------------------------
 // 1) Each Parameter
@@ -27,15 +28,19 @@ import { Link } from "react-router-dom";
 // -------------------------------------------------
 function Movie(props) {
   return (
-    <div>
-      <h2>
+    <div className={styles.movie}>
+      <img
+        className={styles.movie__img}
+        alt={props.movie.title}
+        src={props.movie.medium_cover_image}
+      ></img>
+      <h2 className={styles.movie__title}>
         {/* <a href="/movie">{props.movie.title}</a> */}
         {/* <Link to="/movie">{props.movie.title}</Link> */}
         <Link to={`/movie/${props.movie.id}`}>{props.movie.title}</Link>
       </h2>
-      <img alt={props.movie.title} src={props.movie.medium_cover_image}></img>
       <p>{props.movie.summary}</p>
-      <ul>
+      <ul className={styles.movie__genres}>
         {props.movie.genres.map((genre, index) => (
           <li key={index}>{genre}</li>
         ))}
